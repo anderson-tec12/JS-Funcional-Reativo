@@ -5,3 +5,10 @@ const carrinho = [
   { nome: "Lapis", qtde: 3, preco: 5.82 },
   { nome: "Tesoura", qtde: 1, preco: 19.2 },
 ];
+
+const getNome = (item) => item.nome;
+console.log(carrinho.map(getNome));
+
+const getTotal = (item) => item.qtde * item.preco;
+const totais = carrinho.map(getTotal);
+console.log(totais);
