@@ -1,0 +1,32 @@
+const carrinho = [
+  { nome: "Caneta", qtde: 10, preco: 7.99, fragil: true },
+  { nome: "Impressora", qtde: 1, preco: 649.5, fragil: true },
+  { nome: "Caderno", qtde: 4, preco: 27.1, fragil: false },
+  { nome: "Lapis", qtde: 3, preco: 5.82, fragil: false },
+  { nome: "Tesoura", qtde: 1, preco: 19.2, fragil: true },
+];
+
+//1 apenas os fragios
+//2 qtde e preco
+// 3 media
+
+const validos = (item) => item.fragil === true;
+const soma = (item) => item.qtde * item.preco;
+
+const produtos = carrinho
+  .filter(validos)
+  .map(soma)
+  .reduce(
+    (acc, ele) => {
+      const novoQtde = acc.qtde + 1;
+      const novoTotal = acc.total + ele;
+      return {
+        qtde: novoQtde,
+        total: novoTotal,
+        media: novoTotal / novoQtde,
+      };
+    },
+    { qtde: 0, total: 0, media: 0 }
+  );
+
+console.log(produtos);
