@@ -3,6 +3,4 @@ const path = require("path");
 
 const caminho = path.join(__dirname, "legendas");
 
-const arquivos = fn.lerDiretorio(caminho);
-
-console.log(arquivos);
+fn.lerDiretorio(caminho).then(console.log);
