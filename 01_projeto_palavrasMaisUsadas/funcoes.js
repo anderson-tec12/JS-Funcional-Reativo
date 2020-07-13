@@ -35,10 +35,15 @@ function lerArquivo(caminho) {
 function removerSeVazio(array) {
   return array.filter((el) => el.trim());
 }
+
+function removerSeIncluir(array, padraoTextual) {
+  return array.filter((el) => !el.includes(padraoTextual));
+}
 module.exports = {
   lerDiretorio,
   elementosTermincadoCom,
   lerArquivos,
   lerArquivo,
   removerSeVazio,
+  removerSeIncluir,
 };
