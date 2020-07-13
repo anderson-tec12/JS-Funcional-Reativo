@@ -17,7 +17,23 @@ function elementosTermincadoCom(array, padrao) {
   return array.filter((el) => el.endsWith(padrao));
 }
 
+function lerArquivos(caminhos) {
+  return Promise.all(caminhos.map((caminho) => lerArquivo(caminho)));
+}
+
+function lerArquivo(caminho) {
+  return new Promise((resolve, reject) => {
+    try {
+      const conteudo = fs.readFileSync(caminho, { encoding: "utf-8" });
+      resolve(conteudo.toString());
+    } catch (e) {
+      reject(e);
+    }
+  });
+}
 module.exports = {
   lerDiretorio,
   elementosTermincadoCom,
+  lerArquivos,
+  lerArquivo,
 };
