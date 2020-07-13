@@ -31,9 +31,14 @@ function lerArquivo(caminho) {
     }
   });
 }
+
+function removerSeVazio(array) {
+  return array.filter((el) => el.trim());
+}
 module.exports = {
   lerDiretorio,
   elementosTermincadoCom,
   lerArquivos,
   lerArquivo,
+  removerSeVazio,
 };
