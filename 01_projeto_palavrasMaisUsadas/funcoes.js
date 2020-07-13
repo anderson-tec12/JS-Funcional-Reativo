@@ -13,6 +13,11 @@ function lerDiretorio(caminho) {
   });
 }
 
+function elementosTermincadoCom(array, padrao) {
+  return array.filter((el) => el.endsWith(padrao));
+}
+
 module.exports = {
   lerDiretorio,
+  elementosTermincadoCom,
 };
