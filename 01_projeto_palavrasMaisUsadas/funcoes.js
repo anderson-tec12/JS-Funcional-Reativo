@@ -39,6 +39,14 @@ function removerSeVazio(array) {
 function removerSeIncluir(array, padraoTextual) {
   return array.filter((el) => !el.includes(padraoTextual));
 }
+
+function removerSeNumero(array) {
+  return array.filter((el) => {
+    const num = parseInt(el.trim());
+    return num !== num; //NaN
+  });
+}
+
 module.exports = {
   lerDiretorio,
   elementosTermincadoCom,
@@ -46,4 +54,5 @@ module.exports = {
   lerArquivo,
   removerSeVazio,
   removerSeIncluir,
+  removerSeNumero,
 };
