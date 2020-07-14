@@ -13,8 +13,10 @@ function lerDiretorio(caminho) {
   });
 }
 
-function elementosTermincadoCom(array, padrao) {
-  return array.filter((el) => el.endsWith(padrao));
+function elementosTermincadoCom(padrao) {
+  return (array) => {
+    return array.filter((el) => el.endsWith(padrao));
+  };
 }
 
 function lerArquivos(caminhos) {
@@ -32,15 +34,17 @@ function lerArquivo(caminho) {
   });
 }
 
-function removerSeVazio(array) {
+function removerElementosSeVazio(array) {
   return array.filter((el) => el.trim());
 }
 
-function removerSeIncluir(array, padraoTextual) {
-  return array.filter((el) => !el.includes(padraoTextual));
+function removerElementosSeIncluir(padraoTextual, array) {
+  return function (array) {
+    return array.filter((el) => !el.includes(padraoTextual));
+  };
 }
 
-function removerSeNumero(array) {
+function removerElementosSeNumero(array) {
   return array.filter((el) => {
     const num = parseInt(el.trim());
     return num !== num; //NaN
@@ -52,7 +56,7 @@ module.exports = {
   elementosTermincadoCom,
   lerArquivos,
   lerArquivo,
-  removerSeVazio,
-  removerSeIncluir,
-  removerSeNumero,
+  removerElementosSeVazio,
+  removerElementosSeIncluir,
+  removerElementosSeNumero,
 };
