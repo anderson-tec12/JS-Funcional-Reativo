@@ -23,6 +23,7 @@ const mesclarElementos = (array) => array.join(" ");
 
 const separarPorLinha = (todoConteudo) => todoConteudo.split("\n");
 const separarPorPalavras = (todoConteudo) => todoConteudo.split(" ");
+
 fn.lerDiretorio(caminho)
   //.then((arquivos) => fn.elementosTermincadoCom(".srt")(arquivos))
   .then(fn.elementosTermincadoCom(".srt"))
