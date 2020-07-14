@@ -24,6 +24,19 @@ const mesclarElementos = (array) => array.join(" ");
 const separarPorLinha = (todoConteudo) => todoConteudo.split("\n");
 const separarPorPalavras = (todoConteudo) => todoConteudo.split(" ");
 
+function agruparPalavras(palavras) {
+  return palavras.reduce((agrupamento, palavra) => {
+    const p = palavra.toLowerCase();
+    if (agrupamento[p]) {
+      agrupamento[p] += 1;
+    } else {
+      agrupamento[p] = 1;
+    }
+
+    return agrupamento;
+  }, {});
+}
+
 fn.lerDiretorio(caminho)
   //.then((arquivos) => fn.elementosTermincadoCom(".srt")(arquivos))
   .then(fn.elementosTermincadoCom(".srt"))
@@ -40,4 +53,6 @@ fn.lerDiretorio(caminho)
   .then(mesclarElementos)
   .then(separarPorPalavras)
   .then(fn.removerElementosSeVazio)
+  .then(fn.removerElementosSeNumero)
+  .then(agruparPalavras)
   .then(console.log);
