@@ -53,4 +53,5 @@ fn.lerDiretorio(caminho)
   .then(fn.removerElementosSeVazio)
   .then(fn.removerElementosSeNumero)
   .then(agruparPalavras)
+  .then(fn.ordenarPorAtribNumericos("qtde", "desc"))
   .then(console.log);
