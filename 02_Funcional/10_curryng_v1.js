@@ -18,4 +18,4 @@ function textoComTamanhoEntre(min, max, erro, texto) {
 
 const p1 = { nome: "A", preco: 14.99, desc: 0.25 };
 
-textoComTamanhoEntre(4, 255, "Nome invalido", p1.nome);
+textoComTamanhoEntre(4, 255, "Nome invalido__", p1.nome);
