@@ -52,24 +52,3 @@ fn.composicao(
   agruparPalavras,
   fn.ordenarPorAtribNumericos("qtde", "desc")
 )(caminho).then(console.log);
-
-// fn.lerDiretorio(caminho)
-//   //.then((arquivos) => fn.elementosTermincadoCom(".srt")(arquivos))
-//   .then(fn.elementosTermincadoCom(".srt"))
-//   // .then((arquviosSTR) => fn.lerArquivos(arquviosSTR))
-//   .then(fn.lerArquivos)
-//   .then(mesclarElementos)
-//   .then(separarPorLinha)
-//   // .then((linhas) => fn.removerSeVazio(linhas))
-//   .then(fn.removerElementosSeVazio)
-//   //.then((linhas) => fn.removerElementosSeIncluir("-->")(linhas)) //assim ou
-//   .then(fn.removerElementosSeIncluir("-->")) //assim
-//   .then(fn.removerElementosSeNumero)
-//   .then(fn.removerSimbolos(simbolos))
-//   .then(mesclarElementos)
-//   .then(separarPorPalavras)
-//   .then(fn.removerElementosSeVazio)
-//   .then(fn.removerElementosSeNumero)
-//   .then(agruparPalavras)
-//   .then(fn.ordenarPorAtribNumericos("qtde", "desc"))
-//   .then(console.log);
