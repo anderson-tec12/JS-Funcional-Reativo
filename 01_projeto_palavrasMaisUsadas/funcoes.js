@@ -79,6 +79,20 @@ function ordenarPorAtribNumericos(attr, ordem = "asc") {
   };
 }
 
+function composicao(...fns) {
+  return function (valor) {
+    return fns.reduce(async (acc, fn) => {
+      //Comparando se é uma promisse
+      if (Promise.resolve(acc) === acc) {
+        let awaiting = await acc;
+        return fn(awaiting);
+      } else {
+        return fn(acc);
+      }
+    }, valor);
+  };
+}
+
 module.exports = {
   lerDiretorio,
   elementosTermincadoCom,
@@ -89,4 +103,5 @@ module.exports = {
   removerElementosSeNumero,
   removerSimbolos,
   ordenarPorAtribNumericos,
+  composicao,
 };
