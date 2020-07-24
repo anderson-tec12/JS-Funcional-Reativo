@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/anderson-tec12/jsfuncioareativo/issues"
   },
-  "homepage": "https://github.com/anderson-tec12/jsfuncioareativo#readme"
+  "homepage": "https://github.com/anderson-tec12/jsfuncioareativo#readme",
+  "dependencies": {
+    "rxjs": "^6.6.0"
+  }
 }
