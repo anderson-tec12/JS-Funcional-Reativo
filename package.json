@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/anderson-tec12/jsfuncioareativo#readme",
   "dependencies": {
-    "rxjs": "^6.6.0"
+    "rxjs": "^6.6.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
